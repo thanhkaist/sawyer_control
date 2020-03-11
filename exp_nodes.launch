@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <launch>
+
+    <include file="$(find sawyer_control)/ar_tracker.launch"/>
+    <include file="$(find sawyer_moveit_config)/launch/sawyer_moveit.launch">
+        <arg name="electric_gripper" value="True"/>
+    </include>
+
+    <node pkg="intera_interface" name="joint_trajectory_action_server" type="joint_trajectory_action_server.py" output="screen" />
+    <node pkg="sawyer_control" name="locate_object" type="locate_object.py" output="screen" />
+
     <node pkg="sawyer_control" type="actions_subscriber.py" name="actions"/>
     <node pkg="sawyer_control" type="observations_server.py" name="observations" />
     <node pkg="sawyer_control" type="jacobian_server.py" name="jacobians" />
