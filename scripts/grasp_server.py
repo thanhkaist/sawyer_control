@@ -13,8 +13,8 @@ from geometry_msgs.msg import Pose
 import moveit_commander
 
 import copy
+from sawyer_control.srv import grasping
 
-from ee331_project.srv import grasping
 
 
 def execute_grasp(data):
