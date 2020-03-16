@@ -65,6 +65,7 @@ catkin_python_setup()
    angle_action.srv
    set_target.srv
    grasping.srv
+   target.srv
  )
 
 ## Generate actions in the 'action' folder
